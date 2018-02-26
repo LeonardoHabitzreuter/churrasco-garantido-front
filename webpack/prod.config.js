@@ -65,12 +65,6 @@ module.exports = {
       common.jsLoader,
       common.fileLoader,
       common.urlLoader,
-      Object.assign({}, common.cssLoader, {
-        use: ExtractTextPlugin.extract({
-          fallback: common.cssLoader.use[0],
-          use: common.cssLoader.use.slice(1)
-        })
-      }),
       Object.assign({}, common.stylusLoader, {
         use: ExtractTextPlugin.extract({
           fallback: common.stylusLoader.use[0],
