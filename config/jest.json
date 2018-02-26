@@ -16,7 +16,7 @@
   "setupFiles": ["./setup-tests.js"],
   "snapshotSerializers": ["../node_modules/enzyme-to-json/serializer"],
   "moduleNameMapper": {
-    "\\.(css|less)$": "../config/css-stub.js",
+    "\\.(css|less|styl)$": "identity-obj-proxy",
     "^utils(.*)$": "../src/utils$1"
   }
 }
