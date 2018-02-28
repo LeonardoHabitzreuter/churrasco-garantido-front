@@ -8,7 +8,7 @@
     "test": "jest --config config/jest.json",
     "test:watch": "npm test -- --watch",
     "test:coverage": "npm test -- --coverage",
-    "coveralls": "npm run test:coverage -- --coverageReporters=lcov && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "npm run test:coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "standard --parser babel-eslint --verbose | snazzy",
     "lint:fix": "standard --parser babel-eslint --fix",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config webpack/prod.config -p",
