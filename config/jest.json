@@ -1,17 +1,9 @@
 {
   "bail": true,
   "verbose": true,
-  "collectCoverageFrom": [
-    "src/**/*.js",
-    "!src/**/*.story.js",
-    "!src/components/index.js",
-    "!src/index.js",
-    "!src/app.js",
-    "!src/root.js",
-    "!config/*.js"
-  ],
-  "roots": ["../tests"],
   "setupFiles": ["./setup-tests.js"],
+  "coverageDirectory": "coverage",
+  "roots": ["../tests"],
   "snapshotSerializers": ["../node_modules/enzyme-to-json/serializer"],
   "moduleNameMapper": {
     "\\.(css|less|styl)$": "identity-obj-proxy",
