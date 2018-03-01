@@ -15,7 +15,8 @@
     "build:analyzer": "cross-env ANALYZER=true yarn build",
     "storybook": "start-storybook -p 6006 -c storybook",
     "storybook:build": "cross-env NODE_ENV=production BABEL_ENV=production build-storybook -c storybook",
-    "update-packages": "node scripts/update.js"
+    "update-packages": "node scripts/update.js",
+    "prepush": "npm test"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.15.0-rc.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.2",
     "react-hot-loader": "^4.0.0-beta.15",
