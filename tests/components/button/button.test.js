@@ -6,7 +6,7 @@ test('should has submit type and primary style as default props', () => {
   const wrapper = shallow(<Button />)
   expect(wrapper.find('Button').props()).toMatchObject({
     type: 'submit',
-    bsStyle: 'primary'
+    bsStyle: 'primar'
   })
 })
 
