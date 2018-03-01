@@ -1,6 +1,6 @@
 import { uniq } from 'lodash'
 
-const cutcnpjMask = cnpj => cnpj.replace(/[^\d]+/g,'')
+const cutcnpjMask = cnpj => cnpj.replace(/[^\d]+/g, '')
 
 const allStringCharactersAreEqual = string => uniq(string).length === 1
 

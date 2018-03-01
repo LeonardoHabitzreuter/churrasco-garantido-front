@@ -16,7 +16,7 @@
     "storybook": "start-storybook -p 6006 -c storybook",
     "storybook:build": "cross-env NODE_ENV=production BABEL_ENV=production build-storybook -c storybook",
     "update-packages": "node scripts/update.js",
-    "prepush": "npm test"
+    "prepush": "npm test && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -30,11 +30,13 @@
   "homepage": "https://github.com/LeonardoHabitzreuter/teste-taller#readme",
   "standard": {
     "globals": [
+      "state",
       "it",
       "describe",
       "expect",
       "localStorage",
-      "jest"
+      "jest",
+      "test"
     ],
     "parser": "babel-eslint"
   },
