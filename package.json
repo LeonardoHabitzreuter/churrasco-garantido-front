@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/LeonardoHabitzreuter/teste-taller#readme",
   "standard": {
+    "ignore": ["cnpjValidator.js"],
     "globals": [
       "state",
       "it",
