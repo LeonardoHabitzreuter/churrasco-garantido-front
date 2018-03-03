@@ -1,7 +1,7 @@
 {
-  "name": "teste-taller-frontend",
+  "name": "churrasco-garantido-front",
   "version": "1.0.0",
-  "description": "frontend do teste técnico da taller",
+  "description": "frontend do projeto churrasco garantido",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dashboard -- node server.js",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LeonardoHabitzreuter/teste-taller.git"
+    "url": "git+https://github.com/LeonardoHabitzreuter/churrasco-garantido-front.git"
   },
   "author": "Leonardo Habitzreuter <leonardo.h@hbsis.com.br> (https://github.com/LeonardoHabitzreuter)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LeonardoHabitzreuter/teste-taller/issues"
+    "url": "https://github.com/LeonardoHabitzreuter/churrasco-garantido-front/issues"
   },
-  "homepage": "https://github.com/LeonardoHabitzreuter/teste-taller#readme",
+  "homepage": "https://github.com/LeonardoHabitzreuter/churrasco-garantido-front#readme",
   "standard": {
     "ignore": ["cnpjValidator.js"],
     "globals": [
