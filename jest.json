@@ -1,13 +1,4 @@
 {
-    "bail": true,
-    "verbose": true,
-    "setupFiles": ["<rootDir>/config/setup-tests.js"],
-    "roots": ["<rootDir>/tests"],
-    "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"],
-    "moduleNameMapper": {
-        "^components(.*)$": "<rootDir>/src/components$1",
-        "\\.(css|less|styl)$": "identity-obj-proxy"
-    },
     "collectCoverageFrom": [
         "src/**/*.js",
         "!src/**/*.story.js",
@@ -15,5 +6,18 @@
         "!src/app.js",
         "!src/root.js",
         "!config/*.js"
-    ]
+    ],
+    "coverageThreshold": {
+        "global": {
+          "functions": 100,
+          "lines": 100
+        }
+    },
+    "setupFiles": ["<rootDir>/config/setup-tests.js"],
+    "roots": ["<rootDir>/tests"],
+    "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"],
+    "moduleNameMapper": {
+        "^components(.*)$": "<rootDir>/src/components$1",
+        "\\.(css|less|styl)$": "identity-obj-proxy"
+    }
 }

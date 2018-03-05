@@ -7,6 +7,8 @@ const Button = ({ children, customStyle, ...rest }) => (
   <ReactButton className={classnames(styles[rest.bsStyle], customStyle)} {...rest}>{children}</ReactButton>
 )
 
+const empty = () => {}
+
 Button.defaultProps = {
   bsStyle: 'primary',
   type: 'submit'
