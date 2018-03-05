@@ -4,17 +4,15 @@
         "!src/**/*.story.js",
         "!src/index.js",
         "!src/app.js",
-        "!src/root.js",
-        "!config/*.js"
+        "!src/root.js"
     ],
     "coverageThreshold": {
         "global": {
-          "functions": 100,
-          "lines": 100
+          "functions": 0.5,
+          "lines": 0.5
         }
     },
     "setupFiles": ["<rootDir>/config/setup-tests.js"],
-    "roots": ["<rootDir>/tests"],
     "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"],
     "moduleNameMapper": {
         "^components(.*)$": "<rootDir>/src/components$1",
