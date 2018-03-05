@@ -15,8 +15,7 @@
     "build:analyzer": "cross-env ANALYZER=true yarn build",
     "storybook": "start-storybook -p 6006 -c storybook",
     "storybook:build": "cross-env NODE_ENV=production BABEL_ENV=production build-storybook -c storybook",
-    "update-packages": "node scripts/update.js",
-    "prepush": "npm test && npm run lint"
+    "update-packages": "node scripts/update.js"
   },
   "repository": {
     "type": "git",
