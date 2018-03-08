@@ -6,12 +6,6 @@ const commonStyle = {
   textAlign: 'center'
 }
 
-const Cell = ({ line, lineIndex, columnKey, ...rest }) => {
-  const sameLineAsColumnKey = Object.keys(line).find(element => element === columnKey)
-  const lineContentOrDefault = sameLineAsColumnKey ? line[sameLineAsColumnKey] : null
-  return <td style={commonStyle} {...rest}>{lineContentOrDefault}</td>
-}
-
 const Table = ({ columns, lines }) => (
   <ReactTable responsive striped bordered condensed hover>
     <thead>
@@ -24,7 +18,7 @@ const Table = ({ columns, lines }) => (
     <tbody>
       {lines.map((line, index) => (
         <tr key={line.id || index}>
-          {columns.map((column, columnIndex) => <Cell key={columnIndex} line={line} lineIndex={index} columnKey={column.key} />)}
+          {columns.map((column, columnIndex) => <td key={columnIndex} style={commonStyle}>{line[column.key]}</td>)}
         </tr>
       ))}
     </tbody>
