@@ -176,7 +176,7 @@ class MyOrders extends Component {
         </div>
         <div style={({ paddingTop: '5rem' })} >
           <Table
-            columns={[{ description: 'Código do pedido', key: 'code' }, { description: 'Itens', key: 'products' }, { description: 'Ações', key: 'actions' }]}
+            columns={{ code: 'Código do pedido', products: 'Itens', actions: 'Ações' }}
             lines={this.getOrdersToMountTable()}
           />
         </div>

@@ -164,7 +164,7 @@ class NewOrder extends PureComponent {
         </div>
         <div style={({ paddingTop: '5rem' })}>
           <Table
-            columns={[{ description: 'Produto', key: 'product' }, { description: 'Quantidade', key: 'amount' }]}
+            columns={{ product: 'Produto', amount: 'Quantidade' }}
             lines={this.state.productsAdded}
           />
         </div>

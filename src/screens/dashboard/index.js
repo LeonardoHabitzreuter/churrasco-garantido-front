@@ -79,7 +79,7 @@ class Dashboard extends PureComponent {
             messages={this.state.messages}
           />
           <Table
-            columns={[{ description: 'Nome fantasia', key: 'name' }, { description: 'CNPJ', key: 'cnpj' }, { description: 'QTD pedidos', key: 'ordersQuantity' }]}
+            columns={{ name: 'Nome fantasia', cnpj: 'CNPJ', ordersQuantity: 'QTD pedidos' }}
             lines={this.state.companies}
           />
         </div>

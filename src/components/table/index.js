@@ -10,15 +10,13 @@ const Table = ({ columns, lines }) => (
   <ReactTable responsive striped bordered condensed hover>
     <thead>
       <tr>
-        {columns.map(column => (
-          <th style={commonStyle} key={column.key}>{column.description}</th>
-        ))}
+        {Object.entries(columns).map(([key, value]) => <th style={commonStyle} key={key}>{value}</th>)}
       </tr>
     </thead>
     <tbody>
       {lines.map((line, index) => (
         <tr key={line.id || index}>
-          {columns.map((column, columnIndex) => <td key={columnIndex} style={commonStyle}>{line[column.key]}</td>)}
+          {Object.keys(columns).map((column, columnIndex) => <td key={columnIndex} style={commonStyle}>{line[column]}</td>)}
         </tr>
       ))}
     </tbody>
@@ -26,11 +24,12 @@ const Table = ({ columns, lines }) => (
 )
 
 Table.propTypes = {
-  columns: PropTypes.arrayOf(PropTypes.object),
+  columns: PropTypes.object,
   lines: PropTypes.arrayOf(PropTypes.object)
 }
 
 Table.defaultProps = {
+  columns: {},
   lines: []
 }
 
