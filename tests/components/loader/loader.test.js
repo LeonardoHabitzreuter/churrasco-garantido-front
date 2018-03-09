@@ -5,9 +5,9 @@ import { ClipLoader } from 'react-spinners'
 
 test('should appear only if the loading prop equals true', () => {
   const wrapper = shallow(<Loader loading={false} />)
-  expect(wrapper.find(ClipLoader).props()).toMatchObject({ loading: false })
+  expect(wrapper.find(ClipLoader).prop('loading')).toBe(false)
   wrapper.setProps({ loading: true })
-  expect(wrapper.find(ClipLoader).props()).toMatchObject({ loading: true })
+  expect(wrapper.find(ClipLoader).prop('loading')).toBe(true)
 })
 
 test('should has color equals blue as default', () => {
