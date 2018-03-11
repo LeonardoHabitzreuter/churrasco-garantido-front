@@ -32,6 +32,8 @@
     "globals": [
       "state",
       "it",
+      "afterEach",
+      "beforeEach",
       "describe",
       "expect",
       "localStorage",

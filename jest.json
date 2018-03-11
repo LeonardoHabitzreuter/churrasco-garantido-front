@@ -8,14 +8,15 @@
     ],
     "coverageThreshold": {
         "global": {
-          "functions": 3,
-          "lines": 2
+          "functions": 7,
+          "lines": 9
         }
     },
     "setupFiles": ["<rootDir>/config/setup-tests.js"],
     "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"],
     "moduleNameMapper": {
         "^components(.*)$": "<rootDir>/src/components$1",
+        "^utils(.*)$": "<rootDir>/src/utils$1",
         "\\.(css|less|styl)$": "identity-obj-proxy"
     }
 }
