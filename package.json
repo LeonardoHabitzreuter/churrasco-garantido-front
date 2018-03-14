@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/LeonardoHabitzreuter/churrasco-garantido-front#readme",
   "standard": {
-    "ignore": ["cnpjValidator.js"],
+    "ignore": [
+      "cnpjValidator.js"
+    ],
     "globals": [
       "state",
       "it",
@@ -70,6 +72,8 @@
     "husky": "^0.15.0-rc.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.2",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
     "react-hot-loader": "^4.0.0-beta.15",
     "react-test-renderer": "^16.2.0",
     "regenerator-runtime": "^0.11.1",
@@ -85,6 +89,7 @@
     "webpack-dev-server": "^2.11.0"
   },
   "dependencies": {
+    "antd": "^3.3.0",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
