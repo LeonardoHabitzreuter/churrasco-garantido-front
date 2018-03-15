@@ -5,12 +5,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanPlugin = require('clean-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
+const extractLess = new ExtractTextPlugin({
+  filename: '[name].[contenthash].css',
+  disable: process.env.NODE_ENV === 'development'
+})
+
 module.exports = {
   entry: common.entry,
 
   output: common.output,
 
   plugins: [
+    extractLess,
+
     new CleanPlugin(['dist'], {
       root: common.paths.root
     }),
@@ -64,7 +71,17 @@ module.exports = {
     rules: [
       common.jsLoader,
       common.fileLoader,
-      common.urlLoader,
+      common.urlLoader, {
+        test: /\.less$/,
+        use: extractLess.extract({
+          use: [{
+            loader: 'css-loader'
+          }, {
+            loader: 'less-loader'
+          }],
+          fallback: 'style-loader'
+        })
+      },
       Object.assign({}, common.stylusLoader, {
         use: ExtractTextPlugin.extract({
           fallback: common.stylusLoader.use[0],

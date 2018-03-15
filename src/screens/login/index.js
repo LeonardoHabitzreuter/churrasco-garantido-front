@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import LoginForm from './loginForm'
 import SignUpForm from './signupForm'
-import Button from 'components/button'
+// import Button from 'components/button'
 import { PageHeader } from 'react-bootstrap'
 
 class Login extends PureComponent {
@@ -21,12 +21,12 @@ class Login extends PureComponent {
       <div className='col-sm-8'>
         <PageHeader>
           { this.state.userHasAnAccount ? 'Login' : 'Criar nova conta' }
-          <Button
+          {/* <Button
             bsStyle='link'
             bsSize='large'
             onClick={() => this.setState({ userHasAnAccount: !this.state.userHasAnAccount })}>
             {this.state.userHasAnAccount ? 'Ainda não possuo uma conta' : 'Já possuo uma conta'}
-          </Button>
+          </Button> */}
         </PageHeader>
         {
           this.state.userHasAnAccount

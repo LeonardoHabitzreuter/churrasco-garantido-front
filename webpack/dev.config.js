@@ -33,6 +33,7 @@ module.exports = {
     rules: [
       common.jsLoader,
       common.stylusLoader,
+      common.lessLoader,
       common.fileLoader,
       common.urlLoader
     ]

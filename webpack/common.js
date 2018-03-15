@@ -55,6 +55,24 @@ module.exports = {
     ]
   },
 
+  lessLoader: {
+    test: /\.less$/,
+    use: [{
+      loader: 'style-loader'
+    }, {
+      loader: 'css-loader',
+      options: {
+        sourceMap: true
+      }
+    }, {
+      loader: 'less-loader',
+      options: {
+        sourceMap: true,
+        javascriptEnabled: true
+      }
+    }]
+  },
+
   fileLoader: {
     test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|txt)(\?.*)?$/,
     include: paths.publicsrc,
