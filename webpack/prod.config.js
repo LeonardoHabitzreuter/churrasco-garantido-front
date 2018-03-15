@@ -77,7 +77,10 @@ module.exports = {
           use: [{
             loader: 'css-loader'
           }, {
-            loader: 'less-loader'
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
           }],
           fallback: 'style-loader'
         })
