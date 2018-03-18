@@ -1,25 +1,17 @@
 import React from 'react'
-import { ClipLoader } from 'react-spinners'
-import styles from './loader.styl'
-import classnames from 'classnames'
+import { Spin } from 'antd'
 
-const Loader = ({ className, color, ...rest }) => (
-  <div className='sweet-loading'>
-    <ClipLoader
-      className={
-        classnames(
-          className,
-          styles[color]
-        )
-      }
-      {...rest}
-    />
-  </div>
+const Loader = ({ className, loading, size }) => (
+  <Spin
+    spinning={loading}
+    className={className}
+    size={size}
+  />
 )
 
 Loader.defaultProps = {
-  color: 'blue',
-  loading: true
+  size: 'large',
+  loading: false
 }
 
 export default Loader

@@ -2,27 +2,25 @@ import Alert from 'components/alert'
 import Form from 'components/form'
 import React, { PureComponent } from 'react'
 import api from 'utils/api'
-import Loader from 'components/loader'
 import alertStyles from './alert.styl'
 
 class SignUpForm extends PureComponent {
   state = {
-    showLoader: false,
     showErrorAlert: false,
     messages: [],
     messagesStyle: 'danger'
   }
 
   signup ({ name, email, password, confirmPassword }) {
-    this.setState({ showLoader: true })
+    this.props.showLoader(true)
     api
       .signup({ name, email, password, confirmPassword })
       .then(() => {
         this.props.onSignUp()
       })
       .catch(e => {
+        this.props.showLoader(false)
         this.setState({
-          showLoader: false,
           messages: e.response ? e.response.data.errors : ['Aconteceu um erro ao tentar criar conta no sistema, tente novamente'],
           showErrorAlert: true
         })
@@ -32,7 +30,6 @@ class SignUpForm extends PureComponent {
   render () {
     return (
       <div>
-        <Loader loading={this.state.showLoader} />
         <Alert
           show={this.state.showErrorAlert}
           style={this.state.messagesStyle}
