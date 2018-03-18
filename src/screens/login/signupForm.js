@@ -3,6 +3,7 @@ import Form from 'components/form'
 import React, { PureComponent } from 'react'
 import api from 'utils/api'
 import Loader from 'components/loader'
+import alertStyles from './alert.styl'
 
 class SignUpForm extends PureComponent {
   state = {
@@ -37,6 +38,7 @@ class SignUpForm extends PureComponent {
           style={this.state.messagesStyle}
           handleDismiss={() => this.setState({ showErrorAlert: false })}
           messages={this.state.messages}
+          className={alertStyles.alert}
         />
         <Form
           fields={[{
@@ -70,8 +72,9 @@ class SignUpForm extends PureComponent {
             value: ''
           }]}
           onSubmit={userData => this.signup(userData)}
-          buttonName='Criar conta'
-        />
+        >
+          {this.props.children}
+        </Form>
       </div>
     )
   }

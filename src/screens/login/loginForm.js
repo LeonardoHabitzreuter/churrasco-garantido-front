@@ -3,6 +3,7 @@ import Form from 'components/form'
 import React, { Component } from 'react'
 import api from 'utils/api'
 import Loader from 'components/loader'
+import alertStyles from './alert.styl'
 
 class LoginForm extends Component {
   state = {
@@ -37,6 +38,7 @@ class LoginForm extends Component {
           style={this.state.messagesStyle}
           handleDismiss={() => this.setState({ showErrorAlert: false })}
           messages={this.state.messages}
+          className={alertStyles.alert}
         />
         <Form
           fields={[{
@@ -55,8 +57,9 @@ class LoginForm extends Component {
             value: ''
           }]}
           onSubmit={userData => this.logon(userData)}
-          buttonName='Logar'
-        />
+        >
+          {this.props.children}
+        </Form>
       </div>
     )
   }

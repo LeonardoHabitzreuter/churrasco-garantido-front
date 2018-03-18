@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import LoginForm from './loginForm'
 import SignUpForm from './signupForm'
-// import Button from 'components/button'
 import { PageHeader } from 'react-bootstrap'
+import styles from './login.styl'
+import FormButtons from './formButtons'
 
 class Login extends PureComponent {
   state = {
@@ -16,22 +17,24 @@ class Login extends PureComponent {
     history.push('/')
   }
 
+  changeForm () {
+    this.setState({ userHasAnAccount: !this.state.userHasAnAccount })
+  }
+
   render () {
     return (
-      <div className='col-sm-8'>
-        <PageHeader>
+      <div>
+        <PageHeader className={styles.header}>
           { this.state.userHasAnAccount ? 'Login' : 'Criar nova conta' }
-          {/* <Button
-            bsStyle='link'
-            bsSize='large'
-            onClick={() => this.setState({ userHasAnAccount: !this.state.userHasAnAccount })}>
-            {this.state.userHasAnAccount ? 'Ainda não possuo uma conta' : 'Já possuo uma conta'}
-          </Button> */}
         </PageHeader>
         {
           this.state.userHasAnAccount
-            ? (<LoginForm onLogon={() => this.redirectToIndex()} />)
-            : (<SignUpForm onSignUp={() => this.redirectToIndex()} />)
+            ? (<LoginForm onLogon={() => this.redirectToIndex()}>
+              <FormButtons userHasAnAccount={this.state.userHasAnAccount} onChangeForm={() => this.changeForm()} />
+            </LoginForm>)
+            : (<SignUpForm onSignUp={() => this.redirectToIndex()}>
+              <FormButtons userHasAnAccount={this.state.userHasAnAccount} onChangeForm={() => this.changeForm()} />
+            </SignUpForm>)
         }
       </div>
     )
