@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import Button from 'components/button'
 import FormGroup from './formGroup'
 import { Form as ReactForm } from 'react-bootstrap'
+import styles from './form.styl'
 
 export default class Form extends PureComponent {
   state = {
@@ -54,7 +55,7 @@ export default class Form extends PureComponent {
 
   render () {
     return (
-      <ReactForm horizontal onSubmit={e => { e.preventDefault(); this.handleSubmit() }}>
+      <ReactForm className={styles.form} horizontal onSubmit={e => { e.preventDefault(); this.handleSubmit() }}>
         {
           this.state.fields.map(({ labelName, name, type, value, validation, ...rest }, index) => (
             <div key={index}>
@@ -70,7 +71,8 @@ export default class Form extends PureComponent {
             </div>
           ))
         }
-        <Button>{this.props.buttonName}</Button>
+        {this.props.buttonName && <Button className={styles.button}>{this.props.buttonName}</Button>}
+        {this.props.children}
       </ReactForm>
     )
   }

@@ -1,14 +1,32 @@
 import React from 'react'
-import { Alert as ReactAlert } from 'react-bootstrap'
-import Button from 'components/button'
+import { Alert as AntAlert } from 'antd'
 
-const Alert = ({ show, style, handleDismiss, messages }) => (
+const Alert = ({ className, show, style, handleDismiss, messages }) => (
   show &&
-  <ReactAlert bsStyle={style} onDismiss={handleDismiss}>
-    {messages.map((message, index) => <p key={index}>{message}</p>)}
-    <Button onClick={handleDismiss}>Fechar</Button>
-  </ReactAlert>
+  <AntAlert
+    className={className}
+    message={titles[style]}
+    description={messages.map((message, index) => <p key={index}>{message}</p>)}
+    type={types[style]}
+    showIcon
+    closable
+    onClose={handleDismiss}
+  />
 )
+
+const types = {
+  success: 'success',
+  info: 'info',
+  warning: 'warning',
+  danger: 'error'
+}
+
+const titles = {
+  success: 'Sucesso',
+  info: 'Informação',
+  warning: 'Cuidado',
+  danger: 'Erro'
+}
 
 Alert.defaultProps = {
   messages: []
