@@ -15,8 +15,8 @@ const App = () => {
       <Switch>
         <Route path='/login' component={Login} />
         <PrivateRoute path='/registerCompany' component={RegisterCompany} />
-        <PrivateRoute path='/newOrder' component={NewOrder} />
-        <PrivateRoute path='/myOrders' component={MyOrders} />
+        <PrivateRoute path='/orders/newOrder' component={NewOrder} />
+        <PrivateRoute path='/orders/myOrders' component={MyOrders} />
         <PrivateRoute path='/myAccount' component={MyAccount} />
         <PrivateRoute path='/logout' component={Logout} />
         <PrivateRoute path='/' component={Dashboard} />
