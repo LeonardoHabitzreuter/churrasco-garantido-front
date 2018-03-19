@@ -2,11 +2,13 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import FormButtons from '../../../src/screens/login/formButtons'
 
-describe.skip('form buttons component', () => {
-  test('should has a button with type submit and text equals login when the user has an account', () => {
-    const wrapper = shallow(<FormButtons />)
-    const SubmitButton = wrapper.find('Button').filterWhere(b => b.type() === 'button')
-    expect(SubmitButton.length).toBe(1)
-    SubmitButton.text().to.equal('Logar')
+describe.skip('buttons of the login page', () => {
+  test('should call onChangeForm function when the user clicks on the new account button', () => {
+    const mock = jest.fn()
+    const wrapper = shallow(<FormButtons userHasAnAccount onChangeForm={mock} />)
+    const ChangeFormButton = wrapper.findWhere(b => b.children() === 'Criar uma conta')
+    console.log(ChangeFormButton)
+    ChangeFormButton.simulate('click')
+    mock.toBeCalled()
   })
 })
