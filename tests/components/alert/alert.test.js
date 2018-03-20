@@ -4,6 +4,11 @@ import Alert from '../../../src/components/alert'
 import { Alert as AntAlert } from 'antd'
 
 describe('alert component', () => {
+  test('should render correctly', () => {
+    const wrapper = shallow(<Alert show={false} />)
+    expect(wrapper).toMatchSnapshot()
+  })
+
   test('should appear only if the show prop equals true', () => {
     const wrapper = shallow(<Alert show={false} />)
     expect(wrapper.find(AntAlert)).toHaveLength(0)

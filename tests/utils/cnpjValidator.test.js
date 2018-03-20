@@ -1,6 +1,6 @@
 import CNPJValidator from '../../src/utils/cnpjValidator'
 
-describe.only('CNPJ validator', () => {
+describe('CNPJ validator', () => {
   test('should return false when the cnpj is null', () => {
     expect(CNPJValidator(null)).toBeFalsy()
   })
