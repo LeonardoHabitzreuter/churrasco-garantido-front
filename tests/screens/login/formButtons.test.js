@@ -1,14 +1,38 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import FormButtons from '../../../src/screens/login/formButtons'
+import Button from 'components/button'
 
-describe.skip('buttons of the login page', () => {
-  test('should call onChangeForm function when the user clicks on the new account button', () => {
-    const mock = jest.fn()
+describe('buttons of the login page', () => {
+  const mock = jest.fn()
+
+  afterEach(mock.mockClear)
+
+  describe('user has an account', () => {
     const wrapper = shallow(<FormButtons userHasAnAccount onChangeForm={mock} />)
-    const ChangeFormButton = wrapper.findWhere(b => b.children() === 'Criar uma conta')
-    console.log(ChangeFormButton)
-    ChangeFormButton.simulate('click')
-    mock.toBeCalled()
+
+    test('should call onChangeForm function when the user clicks on the new account button', () => {
+      wrapper.find(Button).filterWhere(button => button.children().text() === 'Criar uma conta').simulate('click')
+      expect(mock).toBeCalled()
+    })
+
+    test('should not call onChangeForm function when the user clicks on the login button', () => {
+      wrapper.find(Button).filterWhere(button => button.children().text() === 'Logar').simulate('click')
+      expect(mock).not.toBeCalled()
+    })
+  })
+
+  describe('user does not has an account', () => {
+    const wrapper = shallow(<FormButtons userHasAnAccount={false} onChangeForm={mock} />)
+
+    test('should call onChangeForm function when the user clicks on the login button', () => {
+      wrapper.find(Button).filterWhere(button => button.children().text() === 'Logar').simulate('click')
+      expect(mock).toBeCalled()
+    })
+
+    test('should not call onChangeForm function when the user clicks on the new account button', () => {
+      wrapper.find(Button).filterWhere(button => button.children().text() === 'Criar uma conta').simulate('click')
+      expect(mock).not.toBeCalled()
+    })
   })
 })
