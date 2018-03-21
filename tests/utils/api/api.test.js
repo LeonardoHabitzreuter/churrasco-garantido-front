@@ -1,19 +1,25 @@
-import api from '../../../src/utils/api'
-import axios from 'axios'
+jest.dontMock('../../../src/utils/api')
+const axios = require('axios')
+jest.mock('axios')
 
-describe.skip('api', () => {
-  test('should has the authorization header in any get request', async () => {
-    global.localStorage = { getItem: jest.fn() }
-    axios.create = jest.fn()
-    let axiosConfig = {headers: {common: {}}}
+global.localStorage = { getItem: jest.fn() }
+global.localStorage.getItem.mockReturnValue('{"token":"FakeToken"}')
 
-    global.localStorage.getItem.mockReturnValue('{"token":"FakeToken"}')
-    axios.create.mockReturnValue({
-      interceptors: {request: { use: fn => fn(axiosConfig) }},
-      get: jest.fn()
-    })
+let axiosConfig = {headers: {common: {}}}
+axios.create.mockImplementation(() => ({
+  interceptors: {request: { use: fn => fn(axiosConfig) }},
+  get: () => Promise.resolve({data: [{name: 'Bob'}]})
+}))
 
-    await api.get()
-    expect(axiosConfig.headers.common.authorization).toMatchObject({ token: 'FakeToken' })
+const api = require('../../../src/utils/api').default
+
+describe('api', () => {
+  test('should has the authorization header in any get request', done => {
+    api
+      .get()
+      .then(() => {
+        expect(axiosConfig.headers.common.authorization).toMatchObject({ token: 'FakeToken' })
+        done()
+      })
   })
 })
