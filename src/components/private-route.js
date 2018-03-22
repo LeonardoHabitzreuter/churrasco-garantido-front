@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import api from 'utils/api'
-import Menu from 'components/menu'
+import Layout from 'components/layout'
 
 class PrivateRoute extends PureComponent {
   state = {
@@ -20,9 +20,9 @@ class PrivateRoute extends PureComponent {
     return (
       <Route {...rest} render={props => (
         isAuth ? (
-          <Menu>
+          <Layout>
             <Component {...props} />
-          </Menu>
+          </Layout>
         ) : (
           <Redirect to={{
             pathname: '/login',

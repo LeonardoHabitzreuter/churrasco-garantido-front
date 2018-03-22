@@ -7,7 +7,7 @@ import styles from './styles.styl'
 const { Header, Content, Footer, Sider } = AntLayout
 
 const breadcrumbsByURL = [{
-  url: '',
+  url: '/',
   breadcrumbs: [
     'Dashboard'
   ]
@@ -71,8 +71,8 @@ class Layout extends Component {
                 .find(element => element.url === window.location.pathname)
                 .breadcrumbs.map(text => <Breadcrumb.Item>{text}</Breadcrumb.Item>)
             }</Breadcrumb>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-              Bill is a cat.
+            <div style={{ padding: 24, background: '#fff', overflow: 'auto' }}>
+              {this.props.children}
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>
