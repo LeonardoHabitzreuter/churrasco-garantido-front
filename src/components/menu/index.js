@@ -34,7 +34,7 @@ export default props => (
       <Icon type='user' />
       <span>Minha conta</span>
     </Menu.Item>
-    <Menu.Item>
+    <Menu.Item key='/logout'>
       <Icon type='logout' />
       <span>Sair</span>
     </Menu.Item>

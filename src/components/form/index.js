@@ -55,11 +55,14 @@ export default class Form extends PureComponent {
 
   render () {
     return (
-      <ReactForm className={styles.form} horizontal onSubmit={e => { e.preventDefault(); this.handleSubmit() }}>
+      <ReactForm horizontal onSubmit={e => { e.preventDefault(); this.handleSubmit() }}>
         {
           this.state.fields.map(({ labelName, name, type, value, validation, ...rest }, index) => (
             <div key={index}>
               <FormGroup
+                className={this.props.formGroupsClass}
+                labelSize={this.props.labelSize}
+                inputSize={this.props.inputSize}
                 labelName={labelName}
                 name={name}
                 type={type}

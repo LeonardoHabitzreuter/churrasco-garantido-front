@@ -44,7 +44,7 @@ class RegisterCompany extends PureComponent {
 
   render () {
     return (
-      <div className='col-sm-8'>
+      <div className='col-sm-5'>
         <PageHeader>Cadastrar empresa</PageHeader>
         <Loader loading={this.state.showLoader} />
         <Alert
@@ -54,6 +54,8 @@ class RegisterCompany extends PureComponent {
           messages={this.state.messages}
         />
         <Form
+          labelSize={1}
+          inputSize={11}
           fields={[{
             labelName: 'Nome',
             name: 'name',

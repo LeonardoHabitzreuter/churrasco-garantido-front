@@ -1,17 +1,16 @@
 import React from 'react'
 import { Col, FormGroup as ReactFormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap'
-import styles from './formGroup.styl'
 import classNames from 'classnames'
 
-const FormGroup = ({ labelName, name, type, value, onChange, validationState, validationMessage }) => {
+const FormGroup = ({ className, labelName, labelSize, name, type, value, inputSize, onChange, validationState, validationMessage }) => {
   return (
     <ReactFormGroup
-      className={classNames(styles.formGroup, 'col-sm-12')}
+      className={classNames(className, 'col-sm-12')}
       controlId={name}
       validationState={validationState}
     >
-      <Col componentClass={ControlLabel} sm={2}>{labelName}</Col>
-      <Col sm={4}>
+      <Col componentClass={ControlLabel} sm={labelSize}>{labelName}</Col>
+      <Col sm={inputSize}>
         <FormControl
           type={type}
           value={value}
@@ -22,6 +21,11 @@ const FormGroup = ({ labelName, name, type, value, onChange, validationState, va
       </Col>
     </ReactFormGroup>
   )
+}
+
+FormGroup.defaultProps = {
+  labelSize: 2,
+  inputSize: 4
 }
 
 export default FormGroup

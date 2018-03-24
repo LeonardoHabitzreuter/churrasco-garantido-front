@@ -3,6 +3,7 @@ import Form from 'components/form'
 import React, { Component } from 'react'
 import api from 'utils/api'
 import alertStyles from './alert.styl'
+import formGroupsStyles from './formGroup.styl'
 
 class LoginForm extends Component {
   state = {
@@ -38,6 +39,7 @@ class LoginForm extends Component {
           className={alertStyles.alert}
         />
         <Form
+          formGroupsClass={formGroupsStyles.formGroup}
           fields={[{
             name: 'email',
             labelName: 'Email',

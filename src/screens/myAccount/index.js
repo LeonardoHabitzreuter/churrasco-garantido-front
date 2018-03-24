@@ -77,6 +77,8 @@ class MyAccount extends PureComponent {
           messages={this.state.messages}
         />
         <Form
+          labelSize={2}
+          inputSize={10}
           fields={[{
             labelName: 'Nome',
             name: 'name',

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form component should render properly 1`] = `
+<FormGroup
+  bsClass="form-group"
+  className="col-sm-12"
+>
+  <Col
+    bsClass="col"
+    componentClass={[Function]}
+    sm={2}
+  />
+  <Col
+    bsClass="col"
+    componentClass="div"
+    sm={4}
+  >
+    <FormControl
+      bsClass="form-control"
+      componentClass="input"
+    />
+    <FormControlFeedback
+      bsClass="form-control-feedback"
+      bsRole="feedback"
+    />
+  </Col>
+</FormGroup>
+`;

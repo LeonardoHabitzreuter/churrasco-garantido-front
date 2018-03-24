@@ -33,6 +33,9 @@ const breadcrumbsByURL = [{
   breadcrumbs: [
     'Minha conta'
   ]
+}, {
+  url: '/logout',
+  breadcrumbs: []
 }]
 
 class Layout extends Component {

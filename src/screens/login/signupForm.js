@@ -3,6 +3,7 @@ import Form from 'components/form'
 import React, { PureComponent } from 'react'
 import api from 'utils/api'
 import alertStyles from './alert.styl'
+import formGroupsStyles from './formGroup.styl'
 
 class SignUpForm extends PureComponent {
   state = {
@@ -38,6 +39,7 @@ class SignUpForm extends PureComponent {
           className={alertStyles.alert}
         />
         <Form
+          formGroupsClass={formGroupsStyles.formGroup}
           fields={[{
             labelName: 'Nome',
             name: 'name',
