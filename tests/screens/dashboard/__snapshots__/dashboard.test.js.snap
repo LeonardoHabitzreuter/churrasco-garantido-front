@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard component should renders properly 1`] = `
+<div
+  className="col-sm-8"
+>
+  <PageHeader
+    bsClass="page-header"
+  >
+    Minhas empresas
+  </PageHeader>
+  <Loader
+    loading={true}
+    size="large"
+  />
+  <Alert
+    handleDismiss={[Function]}
+    messages={Array []}
+    show={false}
+    style=""
+  />
+  <Table
+    columns={
+      Object {
+        "cnpj": "CNPJ",
+        "name": "Nome fantasia",
+        "ordersQuantity": "QTD pedidos",
+      }
+    }
+    lines={Array []}
+  />
+</div>
+`;

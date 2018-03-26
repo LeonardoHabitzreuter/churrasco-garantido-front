@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login form component should renders properly 1`] = `
+<div>
+  <Alert
+    className="alert"
+    handleDismiss={[Function]}
+    messages={Array []}
+    show={false}
+    style="danger"
+  />
+  <Form
+    fields={
+      Array [
+        Object {
+          "labelName": "Email",
+          "name": "email",
+          "required": true,
+          "type": "email",
+          "value": "",
+        },
+        Object {
+          "labelName": "Senha",
+          "maxLength": 20,
+          "minLength": 6,
+          "name": "password",
+          "required": true,
+          "type": "password",
+          "value": "",
+        },
+      ]
+    }
+    formGroupsClass="formGroup"
+    onSubmit={[Function]}
+  />
+</div>
+`;

@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My orders component should renders properly 1`] = `
+<div
+  className="col-sm-8"
+  style={
+    Object {
+      "display": "inline-grid",
+    }
+  }
+>
+  <PageHeader
+    bsClass="page-header"
+  >
+    Meus pedidos
+  </PageHeader>
+  <Loader
+    loading={true}
+    size="large"
+  />
+  <Alert
+    handleDismiss={[Function]}
+    messages={Array []}
+    show={false}
+    style=""
+  />
+  <div>
+    <div
+      className="col-sm-4"
+    >
+      <h3>
+        <Label
+          bsClass="label"
+          bsStyle="default"
+        >
+          CNPJ
+        </Label>
+      </h3>
+      <input
+        min="1"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="col-sm-4"
+    >
+      <h3>
+        <Label
+          bsClass="label"
+          bsStyle="default"
+        >
+          Pedido
+        </Label>
+      </h3>
+      <input
+        min="1"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="col-sm-4"
+    >
+      <h3>
+        <Label
+          bsClass="label"
+          bsStyle="default"
+        >
+          Açoes
+        </Label>
+      </h3>
+      <Button
+        bsStyle="primary"
+        onClick={[Function]}
+        type="button"
+      >
+        Filtrar
+      </Button>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "paddingTop": "5rem",
+      }
+    }
+  >
+    <Table
+      columns={
+        Object {
+          "actions": "Ações",
+          "code": "Código do pedido",
+          "products": "Itens",
+        }
+      }
+      lines={Array []}
+    />
+  </div>
+</div>
+`;

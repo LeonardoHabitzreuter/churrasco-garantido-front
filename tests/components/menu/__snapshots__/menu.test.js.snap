@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component should renders properly 1`] = `
+<Menu
+  className=""
+  defaultSelectedKeys={
+    Array [
+      "blank",
+    ]
+  }
+  mode="inline"
+  onClick={[Function]}
+  prefixCls="ant-menu"
+  theme="dark"
+>
+  <MenuItem
+    key="/"
+  >
+    <Icon
+      type="dashboard"
+    />
+    <span>
+      Dashboard
+    </span>
+  </MenuItem>
+  <MenuItem
+    key="/registerCompany"
+  >
+    <Icon
+      type="form"
+    />
+    <span>
+      Cadastrar empresa
+    </span>
+  </MenuItem>
+  <SubMenu
+    key="orders"
+    title={
+      <span>
+        <Icon
+          type="shopping-cart"
+        />
+        <span>
+          Pedidos
+        </span>
+      </span>
+    }
+  >
+    <MenuItem
+      key="/orders/newOrder"
+    >
+      <Icon
+        type="plus"
+      />
+      <span>
+        Novo pedido
+      </span>
+    </MenuItem>
+    <MenuItem
+      key="/orders/myOrders"
+    >
+      <Icon
+        type="table"
+      />
+      <span>
+        Meus pedidos
+      </span>
+    </MenuItem>
+  </SubMenu>
+  <MenuItem
+    key="/myAccount"
+  >
+    <Icon
+      type="user"
+    />
+    <span>
+      Minha conta
+    </span>
+  </MenuItem>
+  <MenuItem
+    key="/logout"
+  >
+    <Icon
+      type="logout"
+    />
+    <span>
+      Sair
+    </span>
+  </MenuItem>
+</Menu>
+`;

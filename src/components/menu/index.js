@@ -1,7 +1,7 @@
 import React from 'react'
 import Icon from 'components/icon'
 import { Menu } from 'antd'
-const { SubMenu } = Menu
+const SubMenu = Menu.SubMenu
 
 const reloadPage = ({ key }) => {
   window.location.href = key

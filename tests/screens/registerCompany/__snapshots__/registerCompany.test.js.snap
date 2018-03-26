@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register company component should renders properly 1`] = `
+<div
+  className="col-sm-5"
+>
+  <PageHeader
+    bsClass="page-header"
+  >
+    Cadastrar empresa
+  </PageHeader>
+  <Loader
+    loading={false}
+    size="large"
+  />
+  <Alert
+    handleDismiss={[Function]}
+    messages={Array []}
+    show={false}
+    style=""
+  />
+  <Form
+    buttonName="Cadastrar"
+    fields={
+      Array [
+        Object {
+          "labelName": "Nome",
+          "maxLength": 30,
+          "minLength": 4,
+          "name": "name",
+          "required": true,
+          "type": "text",
+          "value": "",
+        },
+        Object {
+          "labelName": "CNPJ",
+          "name": "cnpj",
+          "type": "text",
+          "validation": [Function],
+          "value": "",
+        },
+      ]
+    }
+    inputSize={11}
+    labelSize={1}
+    onSubmit={[Function]}
+  />
+</div>
+`;

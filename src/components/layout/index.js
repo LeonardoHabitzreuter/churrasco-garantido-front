@@ -4,7 +4,10 @@ import Icon from 'components/icon'
 import Carousel from 'components/carousel'
 import { Layout as AntLayout, Breadcrumb } from 'antd'
 import styles from './styles.styl'
-const { Header, Content, Footer, Sider } = AntLayout
+const Header = AntLayout.Header
+const Content = AntLayout.Content
+const Footer = AntLayout.Footer
+const Sider = AntLayout.Sider
 
 const breadcrumbsByURL = [{
   url: '/',

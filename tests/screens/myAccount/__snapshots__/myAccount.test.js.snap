@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyAccount component should renders properly 1`] = `
+<div
+  className="col-sm-8"
+>
+  <PageHeader
+    bsClass="page-header"
+  >
+    Minha conta
+  </PageHeader>
+  <Loader
+    loading={true}
+    size="large"
+  />
+  <Alert
+    handleDismiss={[Function]}
+    messages={Array []}
+    show={false}
+    style=""
+  />
+  <Form
+    buttonName="Atualizar conta"
+    fields={
+      Array [
+        Object {
+          "labelName": "Nome",
+          "minLength": 6,
+          "name": "name",
+          "required": true,
+          "type": "text",
+          "value": "",
+        },
+        Object {
+          "labelName": "Email",
+          "name": "email",
+          "required": true,
+          "type": "email",
+          "value": "",
+        },
+        Object {
+          "labelName": "Senha",
+          "maxLength": 20,
+          "minLength": 6,
+          "name": "password",
+          "required": true,
+          "type": "password",
+          "value": "",
+        },
+        Object {
+          "labelName": "Confirme sua senha",
+          "maxLength": 20,
+          "minLength": 6,
+          "name": "confirmPassword",
+          "required": true,
+          "type": "password",
+          "value": "",
+        },
+      ]
+    }
+    inputSize={10}
+    labelSize={2}
+    onSubmit={[Function]}
+  />
+</div>
+`;
