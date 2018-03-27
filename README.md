@@ -25,6 +25,5 @@
  - Jest e enzyme para os testes automatizados
 
 # O que falta fazer
- - Aumentar a cobertura de testes nos componentes e telas (fazendo)
- - Criar arquivo Dockerfile
+ - Criar arquivo Dockerfile (fazendo)
  - Deixar a aplicação rodando na WEB
