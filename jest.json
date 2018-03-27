@@ -8,8 +8,8 @@
     ],
     "coverageThreshold": {
         "global": {
-          "functions": 37,
-          "lines": 53
+          "functions": 39,
+          "lines": 54
         }
     },
     "setupFiles": ["<rootDir>/config/setup-tests.js"],
