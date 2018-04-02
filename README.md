@@ -9,7 +9,7 @@
 # Para rodar
 
 **Variaveis de ambiente e seus respectivos valores padrão**
-* apiHost: http://localhost:3001
+* API_URL: http://localhost:3001
 * port: 3000
 
  - Certifique-se de que a api backend esteja rodando no endereço **http://localhost:3001** (ou no endereço informado)
