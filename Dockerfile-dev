@@ -1,8 +1,8 @@
 FROM node
 LABEL maintainer="Leonardo Habitzreuter <leo.habitzreuter@gmail.com>"
-ENV API_URL=http://localhost:3002 NODE_ENV=production
+ENV API_URL=http://localhost:3002 NODE_ENV=development
 COPY . /app
 WORKDIR /app
-RUN npm install --production
+RUN npm install
 EXPOSE 3000
-CMD [ "npm", "run", "build" ]
+CMD [ "npm", "start" ]
