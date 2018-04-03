@@ -26,7 +26,13 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin(),
     new HtmlPlugin(common.htmlPluginConfig),
-    new CleanWebpackPlugin([common.paths.public])
+    new CleanWebpackPlugin([common.paths.public]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"development"',
+        'API_URL': JSON.stringify(process.env.API_URL) || '"http://localhost:3001"'
+      }
+    })
   ],
 
   module: {
