@@ -6,14 +6,23 @@
 [![Coverage Status](https://coveralls.io/repos/github/LeonardoHabitzreuter/churrasco-garantido-front/badge.svg)](https://coveralls.io/github/LeonardoHabitzreuter/churrasco-garantido-front)
 [![jest](https://facebook.github.io/jest/img/jest-badge.svg)](https://github.com/facebook/jest)
 
-# Para rodar
+# Rodando a app em ambiente de desenvolvimento
 
-**Variaveis de ambiente e seus respectivos valores padrão**
-* API_URL: http://localhost:3001
-* port: 3000
+**Usando docker:**
+ - ***docker image build -t churrasco-garantido-front -f Dockerfile-dev .***
+ - ***docker container run -dp 3000:3000 --name frontend churrasco-garantido-front***
+ - A aplicação se comunicará com o backend no seguinte endereço **http://localhost:3002**.
+ - Caso a API backend esteja disponível em outro endereço basta que seja informada a variável de ambiente API_URL da seguinte maneira:
+ - ***docker container run -dp 3000:3000 -e API_URL=http://localhost:3001 --name frontend churrasco-garantido-front***
+ - A aplicação estará disponível no endereço **http://localhost:3000**
 
- - Certifique-se de que a api backend esteja rodando no endereço **http://localhost:3001** (ou no endereço informado)
- - Então basta rodar o comando ***npm install*** e ***npm start*** e a aplicação estará disponível no endereço **http://localhost:3000** (ou na porta informado)
+ **Sem usar docker:**
+ - ***npm install***
+ - ***npm start***
+ - A aplicação se comunicará com o backend no seguinte endereço **http://localhost:3001**
+ - A aplicação estará disponível no endereço **http://localhost:3000**
+ - Para mudar a porta de acesso da app ou o endereço de comunicação com a API backend basta informar as variáveis da seguinte maneira:
+ - ***API_URL=http://localhost:3002 PORT=3005 npm start***
 
  # Tecnologias e Pacotes Usados
  - React
