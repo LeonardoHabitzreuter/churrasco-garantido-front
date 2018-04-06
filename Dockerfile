@@ -1,8 +1,6 @@
-FROM node:alpine
+FROM nginx:1.13-alpine
 LABEL maintainer="Leonardo Habitzreuter <leo.habitzreuter@gmail.com>"
 ENV API_URL=http://localhost:3002 NODE_ENV=production
-COPY package.json /app/package.json
-WORKDIR /app
-RUN npm install --only=production
-COPY dist dist
-EXPOSE 3000
+COPY dist /usr/share/nginx/html
+COPY config/nginx/default.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
