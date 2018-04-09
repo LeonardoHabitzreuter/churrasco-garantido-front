@@ -15,6 +15,11 @@
  - Caso a API backend esteja disponível em outro endereço basta que seja informada a variável de ambiente API_URL da seguinte maneira:
  - ***docker container run -dp 3000:3000 -e API_URL=http://localhost:3001 --name frontend churrasco-garantido-front***
  - A aplicação estará disponível no endereço **http://localhost:3000**
+ 
+ **Usando docker compose:**
+ - Também é necessário que você tenha o [repositório](github.com/LeonardoHabitzreuter/churrasco-garantido-node) da aplicação backend na sua máquina local
+ - ***docker-compose up -d***
+ - O arquivo compose lê os arquivos "Dockerfile-dev", então não é necessária alguma configuração adicional.
 
  **Sem usar docker:**
  - ***npm install***
@@ -32,6 +37,13 @@
  - Axios para as requisições Rest
  - Babel para transpilar o código para ES5
  - Jest e enzyme para os testes automatizados
+
+# Gerando a imagem docker para ambientes de produção
+ - Execute o arquivo "build" passando como argumento a versao da aplicação:
+ - ***bash build.sh 1.0.0***
+ - Este arquivo shell irá fazer build da aplicação e também de sua imagem para produção
+ - Cheque se a imagem foi criada corretamente:
+ - ***docker image ls***
 
 # O que falta fazer
  - Criar arquivo Dockerfile (fazendo)

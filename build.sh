@@ -2,4 +2,4 @@
 
 imageTag=${1:-'latest'}
 npm run build
-docker image build -t churrasco-garantido-frontend:${imageTag} .
+docker image build -t leonardohabitzreuter/churrasco-garantido-frontend:${imageTag} .
