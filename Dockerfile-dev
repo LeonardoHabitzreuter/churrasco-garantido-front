@@ -1,6 +1,6 @@
 FROM node:alpine
 LABEL maintainer="Leonardo Habitzreuter <leo.habitzreuter@gmail.com>"
-ENV API_URL=http://localhost:3002 NODE_ENV=development
+ENV API_URL=http://0.0.0.0:3001 NODE_ENV=development
 COPY . /app
 WORKDIR /app
 RUN npm install

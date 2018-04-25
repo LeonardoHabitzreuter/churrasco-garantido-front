@@ -11,9 +11,9 @@
 **Usando docker:**
  - ***docker image build -t churrasco-garantido-front -f Dockerfile-dev .***
  - ***docker container run -dp 3000:3000 --name frontend churrasco-garantido-front***
- - A aplicação se comunicará com o backend no seguinte endereço **http://localhost:3002**.
+ - A aplicação se comunicará com o backend no seguinte endereço **http://localhost:3001**.
  - Caso a API backend esteja disponível em outro endereço basta que seja informada a variável de ambiente API_URL da seguinte maneira:
- - ***docker container run -dp 3000:3000 -e API_URL=http://localhost:3001 --name frontend churrasco-garantido-front***
+ - ***docker container run -dp 3000:3000 -e API_URL=http://localhost:8080 --name frontend churrasco-garantido-front***
  - A aplicação estará disponível no endereço **http://localhost:3000**
  
  **Usando docker compose:**

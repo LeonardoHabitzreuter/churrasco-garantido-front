@@ -30,7 +30,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': '"development"',
-        'API_URL': JSON.stringify(process.env.API_URL) || '"http://localhost:3001"',
+        'API_URL': JSON.stringify(process.env.API_URL) || '"http://0.0.0.0:3001"',
         'PORT': 3000
       }
     })
