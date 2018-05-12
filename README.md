@@ -46,5 +46,4 @@
  - ***docker image ls***
 
 # O que falta fazer
- - Criar arquivo Dockerfile (fazendo)
  - Deixar a aplicação rodando na WEB
