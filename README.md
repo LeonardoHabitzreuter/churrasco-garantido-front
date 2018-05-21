@@ -6,6 +6,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/LeonardoHabitzreuter/churrasco-garantido-front/badge.svg)](https://coveralls.io/github/LeonardoHabitzreuter/churrasco-garantido-front)
 [![jest](https://facebook.github.io/jest/img/jest-badge.svg)](https://github.com/facebook/jest)
 
+# Variáveis de ambiente
+ - API_URL: url de conexão para a app backend
+
 # Rodando a app em ambiente de desenvolvimento
 
 **Usando docker:**
@@ -38,12 +41,11 @@
  - Babel para transpilar o código para ES5
  - Jest e enzyme para os testes automatizados
 
-# Gerando a imagem docker para ambientes de produção
- - Execute o arquivo "build" passando como argumento a versao da aplicação:
- - ***bash build.sh 1.0.0***
- - Este arquivo shell irá fazer build da aplicação e também de sua imagem para produção
- - Cheque se a imagem foi criada corretamente:
- - ***docker image ls***
-
-# O que falta fazer
- - Deixar a aplicação rodando na WEB
+# Criando uma nova versão da aplicação
+ - Execute o arquivo "release" passando como argumento a versao da aplicação:
+ - ***sudo bash release.sh 1.0.0***
+ - Este arquivo shell irá:
+ * Versionar o projeto
+ * Criar a imagem Docker da app para rodar em ambiente de produção
+ * Fazer push da imagem para o [Docker Hub](https://hub.docker.com/r/leonardohabitzreuter/churrasco-garantido-frontend/)
+ - Após isso adicione as release notes da nova versão [aqui](https://github.com/LeonardoHabitzreuter/churrasco-garantido-front/tags) e atualize o ambiente de produção para usar a nova versão da aplicação
