@@ -3,7 +3,7 @@ const { join } = require('path')
 const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
-  dist: join(__dirname, '..', 'dist'),
+  dist: process.env.DIST_DIRECTORY || join(__dirname, '..', 'dist'),
   public: join(__dirname, '..', 'public'),
   modules: join(__dirname, '..', 'node_modules')
 }
