@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-imageTag=${1:-'latest'}
+cd /home/appuser/app
 npm run build
-docker image build -t leonardohabitzreuter/churrasco-garantido-frontend:${imageTag} .
+rm -r /home/appuser/app
+nginx -g "daemon off;"
