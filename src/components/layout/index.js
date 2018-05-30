@@ -20,13 +20,13 @@ const breadcrumbsByURL = [{
     'Cadastrar empresa'
   ]
 }, {
-  url: '/orders/newOrder',
+  url: '/newOrder',
   breadcrumbs: [
     'Pedidos',
     'Novo pedido'
   ]
 }, {
-  url: '/orders/myOrders',
+  url: '/myOrders',
   breadcrumbs: [
     'Pedidos',
     'Meus pedidos'

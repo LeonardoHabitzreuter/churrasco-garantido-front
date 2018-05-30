@@ -8,6 +8,7 @@ exports[`Menu component should renders properly 1`] = `
       "blank",
     ]
   }
+  focusable={false}
   mode="inline"
   onClick={[Function]}
   prefixCls="ant-menu"
@@ -47,7 +48,7 @@ exports[`Menu component should renders properly 1`] = `
     }
   >
     <MenuItem
-      key="/orders/newOrder"
+      key="/newOrder"
     >
       <Icon
         type="plus"
@@ -57,7 +58,7 @@ exports[`Menu component should renders properly 1`] = `
       </span>
     </MenuItem>
     <MenuItem
-      key="/orders/myOrders"
+      key="/myOrders"
     >
       <Icon
         type="table"

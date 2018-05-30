@@ -1,6 +1,6 @@
-FROM nginx:1.13-alpine
+FROM nginx:1.14-alpine
 LABEL maintainer="Leonardo Habitzreuter <leo.habitzreuter@gmail.com>"
-ENV API_URL=http://0.0.0.0:3001 DIST_DIRECTORY=/usr/share/nginx/html
+ENV API_URL http://0.0.0.0:3001
 RUN addgroup -g 9999 appgroup && \
     adduser -u 9999 -G appgroup -D appuser && \
     mkdir /home/appuser/app && \
@@ -19,11 +19,11 @@ RUN apk add --update nodejs && \
     chmod -R 777 /var/run
 USER appuser
 RUN cd /home/appuser/app && \
+    npm install async-validator@1.8.2 && \
     npm install && \
     chmod -R 777 /home/appuser/app/webpack && \
     chmod -R 777 /home/appuser/app/public && \
     chmod -R 777 /home/appuser/app/src && \
     chmod -R 777 /home/appuser/app/node_modules
-ENV NODE_ENV production
 EXPOSE 3000
 CMD sh build.sh

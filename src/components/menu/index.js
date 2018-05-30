@@ -21,11 +21,11 @@ export default props => (
       key='orders'
       title={<span><Icon type='shopping-cart' /><span>Pedidos</span></span>}
     >
-      <Menu.Item key='/orders/newOrder'>
+      <Menu.Item key='/newOrder'>
         <Icon type='plus' />
         <span>Novo pedido</span>
       </Menu.Item>
-      <Menu.Item key='/orders/myOrders'>
+      <Menu.Item key='/myOrders'>
         <Icon type='table' />
         <span>Meus pedidos</span>
       </Menu.Item>
