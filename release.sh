@@ -3,6 +3,5 @@
 version=${1:-'latest'}
 git tag -a ${version} -m ${version}
 git push origin --tags
-npm run build
-docker image build -t leonardohabitzreuter/churrasco-garantido-frontend:${imageTag} .
+docker image build -t leonardohabitzreuter/churrasco-garantido-frontend:${version} .
 docker image push leonardohabitzreuter/churrasco-garantido-frontend:${version}
