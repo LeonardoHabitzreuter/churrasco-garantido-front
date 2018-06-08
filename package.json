@@ -92,6 +92,7 @@
     "antd": "^3.3.0",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
+    "http-server": "0.10.0",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
