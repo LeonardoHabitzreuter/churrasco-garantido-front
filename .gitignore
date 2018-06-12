@@ -59,6 +59,3 @@ typings/
 
 # ides
 .vscode/
-
-# bundles
-dist/
