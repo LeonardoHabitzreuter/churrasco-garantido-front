@@ -29,7 +29,8 @@
   "homepage": "https://github.com/LeonardoHabitzreuter/churrasco-garantido-front#readme",
   "standard": {
     "ignore": [
-      "cnpjValidator.js"
+      "cnpjValidator.js",
+      "/dist/"
     ],
     "globals": [
       "state",
