@@ -5,6 +5,7 @@ import api from 'utils/api'
 import React, { Component } from 'react'
 import { PageHeader, Label } from 'react-bootstrap'
 import Loader from 'components/loader'
+import R from 'ramda'
 
 const CancelLink = onSelect => (
   <Button
@@ -121,14 +122,20 @@ class MyOrders extends Component {
   // filtro feito em memória pelo fato do usuário só ver as suas empresas.
   // O mesmo poderia ser feito via requisição REST passando como querystring o seguinte Regex:
   // code__regex=/974(codigo do pedido tem que conter 974 para satisfazer a consulta)
+
+  orderMatchFilters (orderCode, companyCNPJ, order) {
+    return (
+      (!orderCode || order.code.toString().includes(orderCode)) &&
+      (!companyCNPJ || order.company.cnpj.toString().includes(companyCNPJ))
+    )
+  }
+
   filter () {
-    if (!this.state.orderCode && !this.state.companyCNPJ) return this.setState({ orders: this.state.allOrders })
+    const { orderCode, companyCNPJ } = this.state
+    if (!orderCode && !companyCNPJ) return this.setState({ orders: this.state.allOrders })
 
-    const fieldMatchFilter = (filter, field) => !filter || field.toString().includes(filter)
-
-    this.setState({ orders: this.state.allOrders.filter(order => {
-      return fieldMatchFilter(this.state.orderCode, order.code) && fieldMatchFilter(this.state.companyCNPJ, order.company.cnpj)
-    })})
+    const getOnlyMatchingOrders = R.partial(this.orderMatchFilters, [orderCode, companyCNPJ])
+    this.setState({ orders: this.state.allOrders.filter(getOnlyMatchingOrders) })
   }
 
   render () {
