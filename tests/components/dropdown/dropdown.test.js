@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import Dropdown from '../../../src/components/dropdown'
 import { MenuItem } from 'react-bootstrap'
 
-describe('alert component', () => {
+describe('dropdown component', () => {
   test('should renders properly', () => {
     const wrapper = shallow(<Dropdown id='dropdownTest' />)
     expect(wrapper).toMatchSnapshot()

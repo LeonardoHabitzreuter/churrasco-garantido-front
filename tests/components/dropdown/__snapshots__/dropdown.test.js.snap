@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`alert component should renders properly 1`] = `
+exports[`dropdown component should renders properly 1`] = `
 <DropdownButton
   bsStyle="default"
   id="dropdownTest"
