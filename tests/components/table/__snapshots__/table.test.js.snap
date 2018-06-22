@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<Table
+  bordered={true}
+  bsClass="table"
+  condensed={true}
+  hover={true}
+  responsive={true}
+  striped={true}
+>
+  <thead>
+    <tr>
+      <th
+        key="name"
+        style={
+          Object {
+            "textAlign": "center",
+            "verticalAlign": "middle",
+          }
+        }
+      >
+        User's name:
+      </th>
+      <th
+        key="age"
+        style={
+          Object {
+            "textAlign": "center",
+            "verticalAlign": "middle",
+          }
+        }
+      >
+        User's age:
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      key="0"
+    >
+      <td
+        key="0"
+        style={
+          Object {
+            "textAlign": "center",
+            "verticalAlign": "middle",
+          }
+        }
+      >
+        Jhon
+      </td>
+      <td
+        key="1"
+        style={
+          Object {
+            "textAlign": "center",
+            "verticalAlign": "middle",
+          }
+        }
+      >
+        25
+      </td>
+    </tr>
+    <tr
+      key="1"
+    >
+      <td
+        key="0"
+        style={
+          Object {
+            "textAlign": "center",
+            "verticalAlign": "middle",
+          }
+        }
+      >
+        Hailie
+      </td>
+      <td
+        key="1"
+        style={
+          Object {
+            "textAlign": "center",
+            "verticalAlign": "middle",
+          }
+        }
+      />
+    </tr>
+  </tbody>
+</Table>
+`;

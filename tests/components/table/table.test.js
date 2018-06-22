@@ -5,6 +5,10 @@ import Table from '../../../src/components/table'
 describe('table component', () => {
   const wrapper = shallow(<Table columns={{ name: "User's name:", age: "User's age:" }} lines={[{ name: 'Jhon', age: 25, sex: 'male' }, { name: 'Hailie' }]} />)
 
+  describe('snapshot', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+
   describe('thead', () => {
     test('should render just one tr', () => {
       expect(wrapper.find('thead').find('tr')).toHaveLength(1)
