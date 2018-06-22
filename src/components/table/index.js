@@ -3,7 +3,8 @@ import { Table as ReactTable } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
 const commonStyle = {
-  textAlign: 'center'
+  textAlign: 'center',
+  verticalAlign: 'middle'
 }
 
 const Table = ({ columns, lines }) => (
